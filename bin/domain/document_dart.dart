@@ -27,16 +27,16 @@ class DocumentDart {
             "args": ["--headless", "--no-sandbox", "--disable-dev-shm-usage"]
           }
         });
-    driver.get(env['LIST_DART_SDK_API_URL'] ?? '');
+    driver.get(env['LIST_DART_SDK_API_URL']!);
     list = await _getParsingData();
 
-    driver.get(env['SET_DART_SDK_API_URL'] ?? '');
+    driver.get(env['SET_DART_SDK_API_URL']!);
     set = await _getParsingData();
 
-    driver.get(env['MAP_DART_SDK_API_URL'] ?? '');
+    driver.get(env['MAP_DART_SDK_API_URL']!);
     map = await _getParsingData();
 
-    driver.get(env['ITERABLE_DART_SDK_API_URL'] ?? '');
+    driver.get(env['ITERABLE_DART_SDK_API_URL']!);
     iterable = await _getParsingData();
 
     return true;
