@@ -21,25 +21,23 @@ class DocumentDart {
     driver = createDriver(
         uri: Uri.parse(env['WEBDRIVE_URL'] ?? ''),
         spec: WebDriverSpec.W3c,
-        desired: Capabilities.firefox
-        // {
-        //   'browserName': 'firefox'
-        //   "moz:firefoxOptions": {
-        //     "args": ["--headless", "--no-sandbox", "--disable-dev-shm-usage"]
-        //   }
-        // }
-        );
+        desired: {
+          'browserName': 'firefox',
+          "moz:firefoxOptions": {
+            "args": ["--headless", "--no-sandbox", "--disable-dev-shm-usage"]
+          }
+        });
     driver.get(env['LIST_DART_SDK_API_URL'] ?? '');
     list = await _getParsingData();
 
-    // driver.get(env['SET_DART_SDK_API_URL'] ?? '');
-    // set = await _getParsingData();
+    driver.get(env['SET_DART_SDK_API_URL'] ?? '');
+    set = await _getParsingData();
 
-    // driver.get(env['MAP_DART_SDK_API_URL'] ?? '');
-    // map = await _getParsingData();
+    driver.get(env['MAP_DART_SDK_API_URL'] ?? '');
+    map = await _getParsingData();
 
-    // driver.get(env['ITERABLE_DART_SDK_API_URL'] ?? '');
-    // iterable = await _getParsingData();
+    driver.get(env['ITERABLE_DART_SDK_API_URL'] ?? '');
+    iterable = await _getParsingData();
 
     return true;
   }
@@ -106,10 +104,8 @@ class DocumentDart {
   }
 
   static Ticket? getQuestionCollection(String subject) {
-    Map<String, Map<String, String>>? collection = {
-      'list': list
-      // 'map': map, 'set': set, 'iterable': iterable
-    }[subject];
+    Map<String, Map<String, String>>? collection =
+        {'list': list, 'map': map, 'set': set, 'iterable': iterable}[subject];
 
     if (collection != null) {
       String subtopic = _getRandomKey(collection);

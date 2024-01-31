@@ -1,0 +1,8 @@
+LIST_DART_SDK_API_URL = 'https://api.dart.dev/stable/3.2.6/dart-core/List-class.html'
+SET_DART_SDK_API_URL = 'https://api.dart.dev/stable/3.2.6/dart-core/Set-class.html'
+MAP_DART_SDK_API_URL = 'https://api.dart.dev/stable/3.2.6/dart-core/Map-class.html'
+ITERABLE_DART_SDK_API_URL = 'https://api.dart.dev/stable/3.2.6/dart-core/Iterable-class.html'
+
+WEBDRIVE_URL = 'http://localhost:9515'
+
+BOT_TG_TOKEN = '6979730597:AAGllQhacRfjWfC7z4Dc6h62JevQMJZrK9g'

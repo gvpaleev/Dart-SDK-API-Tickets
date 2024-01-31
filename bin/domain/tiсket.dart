@@ -17,14 +17,16 @@ class Ticket {
 
 $question
 
-${options.map((e) => ' - ' + e + '\n').toList().join('')}
+${options.map((e) => ' - ' + e + '\n\n').toList().join('')}
 
 ''';
   }
 
   bool isCheck(int) {
     if (int < 1 || int > 4) return false;
-    return correctOption == correctOption[--int];
+    bool flag = correctOption == options[--int];
+
+    return flag;
   }
 }
 
